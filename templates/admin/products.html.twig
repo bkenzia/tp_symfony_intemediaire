@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>la listes des produits de notre boutique </h2>
+    {% for product in products %}
+        <article>
+            <h3>{{product.name}}</h3>
+            <p>la description du produit : {{product.description}}</p>
+            <h4>le prix : {{product.price}}</h4>
+            <h4>la contité en stoque : {{product.stock}}</h4>
+            <h5>la catégorie de produit : {{product.category.name}}</h5>
+        </article>
+        <hr>
+    {% endfor %}
+</body>
+</html>
