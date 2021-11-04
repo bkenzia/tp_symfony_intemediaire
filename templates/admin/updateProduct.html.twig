@@ -1,0 +1,33 @@
+{% extends "admin/home.html.twig" %}
+{% block style %}
+    <link rel="stylesheet" href="{{ asset('css/form.css') }}">
+{% endblock %}
+{% block main %}
+    <h2>modifier le produit "{{product.name}}" </h2>
+    {{form_start(productForm)}}
+        <div>
+            {{form_label(productForm.name,'Nom')}}
+            {{form_widget(productForm.name)}}
+        </div>
+        <div>
+            {{form_label(productForm.description,'Description')}}
+            {{form_widget(productForm.description)}}
+        </div>
+        <div>
+            {{form_label(productForm.price,'Prix')}}
+            {{form_widget(productForm.price)}}
+        </div>
+        <div>
+            {{form_label(productForm.stock,'Stoque')}}
+            {{form_widget(productForm.stock)}}
+        </div>
+        <div>
+            {{form_label(productForm.category,'category')}}
+            {{form_widget(productForm.category)}}
+        </div>
+        <div class="submit">
+            {{form_widget(productForm.submit)}}
+        </div>
+    {{form_end(productForm)}}
+    <h2><a href="{{path('admin_product_list')}}"> retoure à la liste des produits</a></h2>
+{% endblock %}

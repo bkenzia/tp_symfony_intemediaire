@@ -1,0 +1,14 @@
+{% extends "admin/home.html.twig" %}
+{% block main %}
+    <h2>{{category.name}}</h2>
+    <p>la description : {{category.description}}</p>
+    <hr>
+    <h3>la liste des produits de cette catégorie :</h3>
+    {% for product in category.products %}
+    <h4>{{product.name}}</h4>
+    <p>la description de produit : {{product.description}}</p>
+    <h4>le prix : {{product.price}}</h4>
+    <h4>la contité en stoque : {{product.stock}}</h4>
+        
+    {% endfor %}
+{% endblock %}

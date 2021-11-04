@@ -1,22 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+
+{% extends "admin/home.html.twig" %}
+{% block main %}
     <h2>la listes des produits de notre boutique </h2>
     {% for product in products %}
         <article>
-            <h3>{{product.name}}</h3>
+            <h3><a href="{{path('admin_show_product',{'id':product.id})}}">{{product.name}}</a></h3>
             <p>la description du produit : {{product.description}}</p>
             <h4>le prix : {{product.price}}</h4>
             <h4>la contité en stoque : {{product.stock}}</h4>
             <h5>la catégorie de produit : {{product.category.name}}</h5>
         </article>
+        <h3><a href="{{path('update_product',{'id':product.id})}}">modifier le produit</a></h3>
+        <h3><a href="{{path('delete_product',{'id':product.id})}}">suprimer le produit</a></h3>
         <hr>
     {% endfor %}
-</body>
-</html>
+    <h2><a href="{{path('create_product')}}">ajouter un produit à la liste </a></h2>
+{% endblock %}
