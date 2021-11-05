@@ -1,5 +1,6 @@
-{% extends "admin/home.html.twig" %}
+{% extends "front/home.html.twig" %}
 {% block style %}
+    {{ parent() }}
     <link rel="stylesheet" href="{{ asset('css/form.css') }}">
 {% endblock %}
 {% block main %}

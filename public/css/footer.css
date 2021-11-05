@@ -1,0 +1,23 @@
+footer{
+
+    display: flex !important;
+    
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding: 0.5rem 1.5rem;
+  box-shadow: 3px 3px rgba(43, 59, 6, 0.568), -0.25em 0 0.4em olive;
+}
+footer ul {
+    display: flex !important;
+    gap: 2rem;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}

@@ -1,7 +1,65 @@
 {% extends "admin/home.html.twig" %}
+{% block style %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ asset('js/header.js') }}" defer></script>   
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/header.css') }}">
+{% endblock %}
 {% block header %}
-    <form action="{{path('front_search')}}" methode="get">
-        <input type="search" name="search" id="search">
-        <input type="submit" value="rechercher">
-    </form>
+    <header >
+        <h1><img class="logo" src="{{ asset('images/logo.jpg') }}" alt="logo boutique"></h1>
+        <form action="{{path('front_search')}}" methode="get">
+            <input type="search" name="search" id="search" placeholder="rechercher">
+            <button type="submit"><img src="{{ asset('images/iconRecherche2.jpg') }}" alt=""></button>
+            {# <input type="submit" value="rechercher"> #}
+        </form>
+        <div id="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav >
+            <span class="close-menu">×</span>
+            <h2>MENU</h2>
+            <ul>
+                <li><a href="{{ path('front_product_list') }}">Accueil</a></li>
+                {% if app.user != [] %}
+                    {% for role in app.user.roles %}
+                        {% if role =="ROLE_ADMIN" %}
+                            <li>
+                            <a href="{{path('admin_product_list')}}">Produits</a>
+                            </li>
+                            <li>
+                            <a href="{{path('create_product')}}">Ajouter un produit</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+                {% if app.user %}
+                    <li >
+                        <a href="{{ path('app_logout') }}">Déconnexion</a>
+                    </li>
+                {% else %}
+                    <li class="mb-3">
+                        <a href="{{ path('app_login') }}">connexion</a>
+                    </li>
+                {% endif %}
+                
+                
+            </ul>
+        </nav>
+    </header>
+    
+{% endblock %}
+{% block footer %}
+    <footer>
+        <h1><img class="logo" src="{{ asset('images/logo.jpg') }}" alt="logo boutique"></h1>
+        <nav>
+            <ul>
+                <li><a href="#">nous contacter</a></li>
+                <li><a href="#"> En savoir +</a></li>
+            </ul>
+        </nav>
+    </footer>
 {% endblock %}

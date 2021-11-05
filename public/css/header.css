@@ -1,0 +1,142 @@
+header{
+    display: flex !important;
+    
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding: 0.5rem 1.5rem;
+    box-shadow: 3px 3px rgba(43, 59, 6, 0.568), -0.25em 0 0.4em olive;
+    
+}
+header ul{
+    display: flex !important;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    
+}
+header li {
+    list-style: none;
+}
+header a{
+    text-decoration: none;
+}
+a:hover{
+    color: olive;
+    text-decoration:underline;
+}
+#burger-menu{
+    display: none;
+}
+nav span {
+    display: none;
+}
+nav h2{
+    display: none;
+}
+img{
+    width: 21px;
+}
+header button{
+    padding: 0%;
+    border: none;
+}
+header form input{
+    border: none;
+}
+header form{
+    border: 1px solid gray;
+    display: flex;
+    flex-direction:row !important ;
+    align-items: center !important;
+    padding: 0 !important;
+}
+.logo{
+    width: 100%;
+}
+h1{
+    padding-top: 0.5rem;
+    width: 100px;
+    margin: 0;
+}
+/* burger */
+@media only screen and (max-width: 600px) {
+    header{
+        
+        flex-direction:row;
+        
+    }
+    header h1{
+        margin: 0%;
+        width: 70px;
+       
+    }
+    form{
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap !important;
+    }
+    #burger-menu {
+        width: 50px;
+        padding: 0 10px;
+        border: 1px solid gray;
+        box-shadow: 0 0 5px #000;
+        border-radius: 5px;
+        box-shadow: inset 0px 0px 10px olive ;
+        transition: all 0.3s;
+        cursor: pointer;
+        display: block
+    }
+    
+    #burger-menu span {
+        display: block;
+        margin: 15px 0;
+        border-bottom: 1px solid #000;
+    }
+    
+    #burger-menu.clicked {
+        box-shadow: inset 0px 0px 10px olive ;
+    }
+
+    nav {
+        width: 150px;
+        position: fixed;
+        padding: 15px;
+        left: -330px;
+        top: 0;
+        bottom: 0;
+        background: #ffffff;
+        border-right: 1px solid #000;
+    }
+    
+    nav h2 {
+        margin-bottom: 50px;
+        text-align: center;
+        display: block;
+    }
+    
+    nav li {
+        text-align: center;
+        list-style: none;
+       
+    }
+    
+    nav .close-menu {
+        display: block;
+        float: right;
+        font-size: 50px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+    ul{
+        flex-direction: column !important;
+        padding-left: 0 !important;
+    }
+    
+    nav .close-menu:hover {
+        color: blue;
+        transform: rotate(90deg);
+    }
+}
