@@ -6,6 +6,9 @@
          <h3>{{category.name}}</h3>
          <p>la description : {{category.description}}</p>
         </article>
+        <h3><a href="{{path('admin_category_update',{'id':category.id})}}">modifier la catégorie</a></h3>
+        <h3><a href="{{path('admin_category_delete',{'id':category.id})}}">suprimer la catégorie</a></h3>
         <hr>
     {% endfor %}
+    <h2><a href="{{path('admin_create_category')}}">ajouter une catégorie  </a></h2>
 {% endblock %}

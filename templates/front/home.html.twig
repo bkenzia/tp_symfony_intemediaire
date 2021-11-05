@@ -1,0 +1,7 @@
+{% extends "admin/home.html.twig" %}
+{% block header %}
+    <form action="{{path('front_search')}}" methode="get">
+        <input type="search" name="search" id="search">
+        <input type="submit" value="rechercher">
+    </form>
+{% endblock %}
